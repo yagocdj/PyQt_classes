@@ -1,7 +1,13 @@
 from PyQt5 import uic, QtWidgets
 
 def callSecondWindow():
+
     second_window.show()
+
+    # In case you want to hide the first window when the first is opened,
+    # do the following:
+    # first_window.hide()
+
     second_window.label.setText("Hello world!")
 
 if __name__ == "__main__":
