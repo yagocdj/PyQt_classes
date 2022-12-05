@@ -13,11 +13,19 @@ def save():
         f.write(data)
 
 
+def readFromFile():
+    file = QtWidgets.QFileDialog.getOpenFileName()[0]
+
+    with open(file, 'r') as f:
+        screen.label_6.setText(f.read())
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     screen = uic.loadUi("save.ui")
 
     screen.actionSave.triggered.connect(save)
+    screen.actionOpen.triggered.connect(readFromFile)
 
     screen.show()
     app.exec()
